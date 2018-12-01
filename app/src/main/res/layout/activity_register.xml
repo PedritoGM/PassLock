@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/logo" />
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="413dp"
+        android:layout_width="412dp"
         android:layout_height="309dp"
         android:background="@color/colorDarkBlue"
         app:layout_constraintBottom_toBottomOf="parent"
