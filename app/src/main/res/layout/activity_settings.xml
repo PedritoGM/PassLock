@@ -125,6 +125,7 @@
         android:layout_marginBottom="8dp"
         android:text="Comming soon..."
         android:textSize="11dp"
+        app:fontFamily="@font/gadugi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
