@@ -39,4 +39,10 @@ public class SettingsActivity extends AppCompatActivity {
 
 
 
+    public void onBackPressed(){
+        super.onBackPressed();
+        startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
+        finish();
+
+    }
 }
