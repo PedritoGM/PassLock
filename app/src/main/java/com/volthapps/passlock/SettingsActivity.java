@@ -1,5 +1,6 @@
 package com.volthapps.passlock;
 
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,8 @@ import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    Button btn;
+    Button settingsButton;
+    Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +26,15 @@ public class SettingsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
 
-        btn = findViewById(R.id.settingsButton);
-        btn.setVisibility(View.INVISIBLE);
+        settingsButton = findViewById(R.id.settingsButton);
+        settingsButton.setVisibility(View.INVISIBLE);
+        backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(SettingsActivity.this, HomeActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
 
