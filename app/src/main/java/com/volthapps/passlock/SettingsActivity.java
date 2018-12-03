@@ -26,6 +26,9 @@ public class SettingsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
 
+        //ANIMACION!!!! HAY QUE MIRARLA
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
         settingsButton = findViewById(R.id.settingsButton);
         settingsButton.setVisibility(View.INVISIBLE);
         backButton = findViewById(R.id.backButton);
@@ -42,6 +45,8 @@ public class SettingsActivity extends AppCompatActivity {
     public void onBackPressed(){
         super.onBackPressed();
         startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
         finish();
 
     }
