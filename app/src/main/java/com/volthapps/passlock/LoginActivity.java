@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(i);
                 } else {
                     txtedit1.setBackgroundResource(R.drawable.input_text_error);
-                    Toast test = Toast.makeText(getApplicationContext(), "La contraseña es erronea", Toast.LENGTH_SHORT);
+                    Toast test = Toast.makeText(getApplicationContext(), "La contraseña es errónea", Toast.LENGTH_SHORT);
                     test.show();
                 }
             }
