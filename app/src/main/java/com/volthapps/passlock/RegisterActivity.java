@@ -1,6 +1,8 @@
 package com.volthapps.passlock;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,13 +28,17 @@ public class RegisterActivity extends AppCompatActivity {
         registerbtn = findViewById(R.id.registerButton);
         txtedit1 = findViewById(R.id.txtedit1);
         txtedit2 = findViewById(R.id.txtedit2);
+        final SharedPreferences preferencias = getSharedPreferences("preferencias",Context.MODE_PRIVATE);
         registerbtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(txtedit1.getText().toString().equals(txtedit2.getText().toString())){
                     txtedit1.setBackgroundResource(R.drawable.input_box);
                     txtedit2.setBackgroundResource(R.drawable.input_box);
-                    Toast test = Toast.makeText(getApplicationContext(), "Contraseñas iguales", Toast.LENGTH_SHORT);
-                    test.show();
+                    SharedPreferences.Editor editor = preferencias.edit();
+                    editor.putString("password", txtedit1.getText().toString());
+                    editor.commit();
+                    Intent i = new Intent(RegisterActivity.this, HomeActivity.class);
+                    startActivity(i);
                 } else {
                     txtedit1.setBackgroundResource(R.drawable.input_text_error);
                     txtedit2.setBackgroundResource(R.drawable.input_text_error);
