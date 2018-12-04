@@ -49,9 +49,12 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    public void register() {
-        Intent i = new Intent(RegisterActivity.this, HomeActivity.class);
-        startActivity(i);
+    public void onBackPressed(){
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+
     }
 
 }

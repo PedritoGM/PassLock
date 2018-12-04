@@ -21,7 +21,7 @@
 
     <!-- TEMA DEL SPLASH SCREEN. -->
     <style name="SplashTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowBackground">@drawable/splash_bg</item>
     </style>
 
     <style name="AppTheme.CustomTheme">
