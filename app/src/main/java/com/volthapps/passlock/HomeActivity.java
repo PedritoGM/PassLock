@@ -28,6 +28,17 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
 
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        Button b = (Button)findViewById(R.id.new_password);
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, PopUpActivity.class));
+            }
+        });
+
         backButton = findViewById(R.id.backButton);
         backButton.setVisibility(View.INVISIBLE);
         settingsButton = findViewById(R.id.settingsButton);
@@ -35,6 +46,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, SettingsActivity.class);
                 startActivity(i);
+
             }
         });
     }
